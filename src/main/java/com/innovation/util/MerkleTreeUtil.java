@@ -19,20 +19,19 @@ public class MerkleTreeUtil {
 
     public static byte[] concat(byte[]... arrays) {
         int length = 0;
-        for (byte[] array : arrays) {
-            length += array.length;
+        for (byte[] arr : arrays) {
+            length += arr.length;
         }
         byte[] result = new byte[length];
-        int pos = 0;
-        for (byte[] array : arrays) {
-            System.arraycopy(array, 0, result, pos, array.length);
-            pos += array.length;
+        int position = 0;
+        for (byte[] arr : arrays) {
+            System.arraycopy(arr, 0, result, position, arr.length);
+            position += arr.length;
         }
         return result;
     }
 
     public static <T> boolean isWrapperClass(T object){
-        System.out.println(primitiveList.contains(object.getClass()));
         return primitiveList.contains(object.getClass());
     }
 
